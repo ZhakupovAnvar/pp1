@@ -1,10 +1,9 @@
 def evens(n):
-    answer=[]
     for i in range(n):
         if i % 2 == 0:
-            answer.append(i)
-    return answer
+            yield i
+            
 
 n = int(input())
-mylist = evens(n)
+mylist = list(evens(n))
 print(mylist)
