@@ -1,6 +1,6 @@
 import psycopg2 as pgsql
 
-def paginate_query(table_name, limit, offset):
+def sortingQuery(table_name, limit, offset):
     try:
         connection = pgsql.connect(
             database="phonebook",
@@ -9,12 +9,9 @@ def paginate_query(table_name, limit, offset):
             host='localhost',
         )
         con = connection.cursor()
-
         query = f"SELECT * FROM {table_name} LIMIT %s OFFSET %s;"
         con.execute(query, (limit, offset))
-        
         rows = con.fetchall()
-
         for row in rows:
             print(row)
 
@@ -25,4 +22,4 @@ def paginate_query(table_name, limit, offset):
             con.close()
             connection.close()
 
-paginate_query('phones', limit=4, offset=0)
+sortingQuery('phones', limit=10, offset=0)

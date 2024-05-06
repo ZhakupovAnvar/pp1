@@ -51,4 +51,4 @@ def insertToUpdateUser(name, surname, number):
             connection.close()
 
 insertToUpdate()
-insertToUpdateUser('Gaukhar', 'Ulasova', '62938')
+insertToUpdateUser('Gaukhar', 'Ulasova', '2010')

@@ -31,14 +31,12 @@ def insert_many_users():
 
         connection.commit()
         print("Stored procedure created successfully!")
-
     except pgsql.Error as e:
         print("Error while connecting to PostgreSQL", e)
     finally:
         if connection:
             con.close()
             connection.close()
-
 def many_users(names, surnames, phones):
     try:
         connection = pgsql.connect(
@@ -69,7 +67,7 @@ def many_users(names, surnames, phones):
             connection.close()
 
 insert_many_users()
-names = ['Nuriman', 'Maksim']
-surnames = ['Baltabayev', 'Agafonov']
-phones = ['0010','89034']
+names = ['Tair', 'Maksim']
+surnames = ['Ospanov', 'Agafonov']
+phones = ['9090','89034']
 many_users(names, surnames, phones)
